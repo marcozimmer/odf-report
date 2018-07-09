@@ -22,7 +22,8 @@ module ODFReport
       @image_names_replacements.each_pair do |path, template_image|
 
         file.output_stream.put_next_entry(template_image)
-        file.output_stream.write ::File.read(path)
+        #file.output_stream.write ::File.read(path)
+        file.output_stream.write ::File.binread(path)
 
       end
 
